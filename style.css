@@ -1,0 +1,367 @@
+/* RESET BÁSICO E CONFIGURAÇÃO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Fundo cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    padding: 40px 0 20px 0;
+    font-size: 2em;
+    color: #444;
+}
+
+/* CABEÇALHO */ 
+ 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #000000;
+    background-color: rgb(255, 255, 255); /* Mudei para branco, como no código final */
+    
+    /* PROPRIEDADES PARA FIXAR O CABEÇALHO (Sticky) */
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fique acima de tudo */
+}
+
+/* NOVO CSS para a IMAGEM do Logo */
+.logo img {
+    max-height: 150px; /* Define a altura máxima da sua logo */
+    width: auto;      /* Mantém a proporção da imagem */
+    display: block;   /* Remove espaço extra abaixo da imagem */
+}
+
+/* Ajuste no cabeçalho para garantir que a logo fique à esquerda */
+.cabecalho {
+    display: flex;
+    justify-content: space-between; /* Mantém o logo na esquerda e o menu na direita */
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #eee;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #9c9c9c;
+}
+
+/* BANNER DE DESTAQUE (CARROSSEL) */
+.banner-destaque {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    height: 400px; /* Altura fixa para o carrossel */
+    margin-top: 250px;
+}
+
+.banner-slide {
+    display: none; /* O JS controla a visibilidade */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: brightness(0.7); 
+}
+
+.frase-confianca {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.frase-confianca h2 {
+    color: white;
+    font-size: 2em;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* AJUSTE NA SEÇÃO PRINCIPAL DO CATÁLOGO */
+.catalogo-container {
+    /* Garante que o catálogo centralize na tela */
+    margin: 0 auto; 
+    max-width: 1000px; /* Limita o tamanho do bloco principal */
+    padding: 40px 0; /* Adiciona espaço acima/abaixo */
+}
+
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 30px;
+    padding: 0;
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Garante que a prata não seja cortada */
+    margin-bottom: 15px;
+}
+
+.produto h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.produto .preco {
+    font-size: 1.4em;
+    color: #9c9c9c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.botao-whatsapp {
+    display: block;
+    background-color: #9ba00c9d; 
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-whatsapp:hover {
+    background-color: #1FAF59;
+}
+
+/* SOBRE NÓS E CONFIANÇA */
+.sobre-e-confianca {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+}
+
+.conteudo-sobre {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.conteudo-sobre img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.conteudo-sobre div p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: justify;
+    margin-top: 15px;
+}
+.conteudo-sobre div p:first-child {
+    margin-top: 0;
+}
+
+/* RODAPÉ */
+.rodape {
+    padding: 40px 20px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+}
+
+/* RODAPÉ - ESPAÇAMENTO DOS ÍCONES */
+.rodape .contatos a i {
+    margin-right: 8px; /* Adiciona um pequeno espaço à direita do ícone */
+    font-size: 1.2em;  /* Deixa o ícone levemente maior que o texto */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+/* Opcional: Se quiser dar destaque ao WhatsApp */
+.rodape .contatos a:first-child {
+    color: #25D366; /* Cor verde do WhatsApp */
+}
+
+.contatos a {
+    color: rgba(246, 6, 190, 0.981);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contatos a:hover {
+    color: #9c9c9c;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+/* About */
+ 
+/* Ajuste no Container Principal */
+/* AJUSTES GERAIS NA SEÇÃO SOBRE NÓS */
+.about {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    /* Remova o fundo que usou para debug, se houver */
+}
+
+.about-content {
+    max-width: 1000px;
+    min-width: 300px;
+    /* Remova a altura fixa (height: 600px) */
+    background: #f0f0f0; /* Fundo claro para o bloco, como no mockup */
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Ajuste na Coluna da Imagem (Esquerda) */
+/* ESTILO DA IMAGEM */
+.left {
+    width: 30%;
+    min-width: 150px;
+    border-radius: 8px;
+}
+.left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ESTILO DA COLUNA DE TEXTO */
+.right {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 20px; /* Adiciona um espaço da imagem */
+}
+
+/* CORREÇÃO CRÍTICA DO PARÁGRAFO */
+.right p {
+    max-width: 100%; /* Ocupa 100% da coluna direita */
+    font-size: 1em;  /* Tamanho de texto normal */
+    letter-spacing: normal;
+    text-align: justify; /* Deixa o bloco de texto alinhado nas laterais */
+    color: #555;
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+}
+/* NOVO: Estilo para o título principal da seção (h2 ou o p/h3 de título) */
+.title-wrapper-about {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.title-wrapper-about h3 {
+    font-size: 2em;
+    color: #444;
+}
+/* Se você usar a estrutura do mockup anterior (sem o title-wrapper) */
+#about h2 {
+    text-align: center;
+    padding: 40px 0 20px 0;
+    font-size: 2em;
+    color: #444;
+}
+
+/* ------------------------------------ */
+/* AJUSTES PARA TELAS DE CELULARES (MAX 600PX) */
+/* ------------------------------------ */
+@media (max-width: 600px) {
+
+    /* 1. Mudar o Catálogo para 1 Coluna (Lista Vertical) */
+    .lista-produtos {
+        grid-template-columns: 1fr; /* Apenas 1 produto por linha */
+    }
+
+    /* 2. Empilhar Cabeçalho e Ocultar Menu */
+    .cabecalho {
+        flex-direction: column; /* Coloca logo acima do menu */
+        padding: 15px 20px;
+    }
+
+    .menu-principal {
+        margin-top: 10px;
+        /* Se você não quiser ocultar o menu, pode apenas centralizá-lo */
+    }
+    
+    .menu-principal a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+    
+    /* 3. Empilhar Conteúdo do Sobre Nós (Imagem e Texto) */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .left, .right {
+        width: 100%; /* Ocupa a largura total */
+        padding: 0;
+    }
+    
+    .left img {
+        margin-bottom: 20px;
+    }
+
+    /* 4. Ajustar o tamanho da fonte do banner */
+    .frase-confianca h2 {
+        font-size: 1.5em;
+    }
+}
