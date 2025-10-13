@@ -22,6 +22,10 @@
     <a href="#rodape">Contato</a>
     </nav>
 
+<button id="abrir-carrinho" class="botao-carrinho">
+    🛒 <span id="contador-carrinho">0</span>
+</button>
+
 </header>
 
 
@@ -105,13 +109,10 @@
                 </a>
             </div>
 
-            <div class="produto">
-                <img src="Fotos/Foto 9.png" alt="Colar de Trevo Vazado">
-                <h3>Colar de Trevo Vazado</h3>
-                <p class="preco">R$ 44,90</p>
-                <a href="https://wa.me/5511977429648?text=Olá!%20Tudo%20bem?%20Me%20interessei%20pelo%20Colar%20de%20Trevo%20Vazado%20no%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" class="botao-whatsapp">
-                    Comprar no WhatsApp
-                </a>
+            <div class="produto" data-nome="Colar de Trevo Vazado"     data-preco="44.90" data-id="colar-trevo-vazado">
+               <img src="Fotos/Foto 9.png" alt="Colar de Trevo Vazado">
+            <h3>Colar de Trevo Vazado</h3>
+            <p class="preco">R$ 44,90</p>
             </div>
 
             <div class="produto">
@@ -218,5 +219,24 @@
     
 
     <script src="script.js"></script> 
+
+    <div id="carrinho-lateral" class="carrinho-lateral">
+    <div class="carrinho-cabecalho">
+        <h2>Seu Carrinho</h2>
+        <button id="fechar-carrinho" class="fechar-carrinho">&times;</button>
+    </div>
+    
+    <div id="itens-carrinho" class="itens-carrinho">
+        <p class="carrinho-vazio-msg">Seu carrinho está vazio.</p>
+    </div>
+    
+    <div class="carrinho-rodape">
+        <div class="total-carrinho">
+            <span>Total:</span>
+            <span id="valor-total">R$ 0,00</span>
+        </div>
+        <button id="finalizar-compra" class="botao-finalizar">Finalizar Compra</button>
+    </div>
+</div>
 </body>
 </html>

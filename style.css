@@ -365,3 +365,107 @@ h2 {
         font-size: 1.5em;
     }
 }
+
+/* ESTILOS DO CARRINHO LATERAL */
+.carrinho-lateral {
+    height: 100%;
+    width: 0; /* Começa escondido */
+    position: fixed;
+    z-index: 10; 
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Esta classe é ativada pelo JavaScript para abrir o carrinho */
+.carrinho-lateral.aberto {
+    width: 350px; /* Abre para 350px */
+    padding: 0;
+}
+
+.carrinho-cabecalho {
+    padding: 15px 25px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fechar-carrinho {
+    font-size: 30px;
+    color: #555;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.itens-carrinho {
+    padding: 20px;
+    flex-grow: 1; /* Permite que os itens preencham o espaço */
+    overflow-y: auto; /* Adiciona barra de rolagem se houver muitos itens */
+}
+
+.carrinho-vazio-msg {
+    text-align: center;
+    color: #999;
+    padding-top: 50px;
+}
+
+.carrinho-rodape {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.total-carrinho {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.botao-finalizar {
+    width: 100%;
+    padding: 12px;
+    background-color: #8c8c8c; /* Cinza prateado */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-finalizar:hover {
+    background-color: #6a6a6a;
+}
+
+/* Estilo para o ícone de abrir o carrinho (no cabeçalho) */
+.botao-carrinho {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+}
+
+#contador-carrinho {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 1;
+}
