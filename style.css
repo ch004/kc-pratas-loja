@@ -469,3 +469,21 @@ h2 {
     font-size: 12px;
     line-height: 1;
 }
+
+/* ======================================================= */
+/* MEDIA QUERY: AJUSTE PARA TELA DE CELULAR */
+/* Faz o carrinho ocupar 100% da largura em telas pequenas */
+/* ======================================================= */
+@media (max-width: 600px) {
+    
+    .carrinho-lateral.aberto {
+        /* Em telas menores que 600px, o carrinho ocupa toda a largura */
+        width: 100%;
+        /* Ajuste o padding para telas pequenas se necessário */
+    }
+
+    /* Você pode querer que o ícone do carrinho seja maior ou movido no celular */
+    .botao-carrinho {
+        font-size: 28px;
+    }
+}
