@@ -28,7 +28,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 30px 5%;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -37,7 +37,7 @@ a {
 }
 
 .logo img {
-    height: 40px; 
+    height: 150px; 
 }
 
 .nav ul {
@@ -232,9 +232,9 @@ a {
 
 .botao-carrinho {
     position: fixed; 
-    top: 25px;
+    top: 70px;
     /* CORREÇÃO DO CARRINHO: Ajuste de posicionamento para não conflitar com o menu 'Contato' */
-    right: 20px;
+    right: 10px;
     
     background: none;
     border: none;
@@ -453,4 +453,77 @@ a {
     padding: 20px 0;
     background-color: #222;
     font-size: 0.9em;
+}
+
+/* =================================== */
+/* 7. MEDIA QUERIES (RESPONSIVIDADE PARA CELULAR) */
+/* =================================== */
+
+@media (max-width: 768px) {
+    
+    /* 1. CABEÇALHO: Ajusta a organização e esconde o menu principal */
+    .header {
+        padding: 15px 5%; /* Menos padding no celular */
+        height: auto;
+    }
+    
+    .logo img {
+        height: 50px; /* Reduz o logo para caber melhor na tela */
+    }
+
+    /* 💥 CORREÇÃO CRÍTICA: Oculta a navegação principal (Início, Produtos, etc.) */
+    .nav ul { 
+        display: none; 
+    }
+    
+    /* 2. BANNER / CARROSSEL: Ajusta a altura e a frase */
+    .banner-destaque {
+        height: 250px; /* Altura ideal para celular */
+        max-height: 250px;
+    }
+    
+    .frase-confianca {
+        left: 2%; 
+        max-width: 90%; /* Garante que o box de texto ocupe a maior parte da tela */
+        padding: 10px 15px; 
+        top: 60%; /* Posiciona um pouco mais para baixo */
+    }
+    
+    .frase-confianca h2 {
+        font-size: 1.1em; /* Diminui a fonte do texto */
+    }
+
+    /* 3. CATÁLOGO: Produtos em coluna única (estilo do site de exemplo) */
+    .lista-produtos {
+        /* Desativa o Flexbox para que as divs .produto fiquem uma embaixo da outra */
+        display: block; 
+        padding: 0 5%; 
+    }
+    
+    .produto {
+        width: 100%; /* Ocupa 100% da largura */
+        margin: 0 auto 20px auto; /* Centraliza e adiciona espaço inferior */
+    }
+    
+    /* 4. CARRINHO LATERAL: Ocupa a tela toda */
+    .carrinho-lateral {
+        width: 100%; /* Ocupa a tela inteira no celular */
+        right: 0; 
+    }
+
+    .carrinho-header {
+        padding: 15px;
+    }
+
+    /* 5. RODAPÉ: Organização em coluna */
+    .footer-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links, .footer-contato {
+        min-width: 80%;
+        margin-bottom: 30px;
+    }
 }
