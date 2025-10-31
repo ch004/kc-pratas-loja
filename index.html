@@ -5,59 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Pratas - Sua Loja de Joias</title>
     <link rel="stylesheet" href="style.css"> 
-    
-    </head>
+</head>
 <body>
 
     <header class="header">
-        <div class="logo">
-            <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
+        <div class="container-header">
+            
+            <div class="logo">
+                <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
+            </div>
+            
+            <button class="menu-hamburguer" onclick="toggleMenu()">
+                &#9776; 
+            </button>
+
+            <nav id="menu-links"> 
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <button id="abrir-carrinho" class="botao-carrinho"> 
+                🛒 <span id="contador-carrinho">0</span>
+            </button>
+            
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
     
-    <button id="abrir-carrinho" class="botao-carrinho"> 
-        🛒 <span id="contador-carrinho">0</span>
-    </button>
-    
-
-   <section class="banner-destaque" id="inicio"> 
-    
-    <div class="banner-slide fade">
-        <img src="Fotos/Foto 1.png" alt="Destaque de coleção de pratas">
-        <div class="frase-confianca">
-            <h2>Prata 925 de qualidade, entrega rápida e garantia de autenticidade.</h2>
+    <section class="banner-destaque" id="inicio"> 
+        
+        <div class="banner-slide fade">
+            <img src="Fotos/Foto Carrossel.png" alt="Destaque de coleção de pratas">
+            <div class="frase-confianca">
+                <h2>Prata 925 de qualidade, entrega rápida e garantia de autenticidade.</h2>
+            </div>
         </div>
-    </div>
-    <div class="banner-slide fade">
-        <img src="Fotos/Foto 15.png" alt="Promoção da Semana">
-        <div class="frase-confianca">
-            <h2>NOVIDADE: Conheça nossa nova coleção de Prata legítima.</h2>
+        <div class="banner-slide fade">
+            <img src="Fotos/Foto carrossel 2.png" alt="Promoção da Semana">
+            <div class="frase-confianca">
+                <h2>NOVIDADE: Conheça nossa nova coleção de Prata legítima.</h2>
+            </div>
         </div>
-    </div>
-    
-    <div class="banner-slide fade">
-        <img src="Fotos/Foto 10.png" alt="Coleção Pura">
-        <div class="frase-confianca">
-            <h2>Brilhe todos os dias com joias que refletem sua essência e elegância.</h2>
+        
+        <div class="banner-slide fade">
+            <img src="Fotos/Foto 10.png" alt="Coleção Pura">
+            <div class="frase-confianca">
+                <h2>Brilhe todos os dias com joias que refletem sua essência e elegância.</h2>
+            </div>
         </div>
-    </div>
-    
-    <div class="banner-slide fade">
-        <img src="Fotos/Foto 18.jpg" alt="Destaque da Coleção">
-        <div class="frase-confianca">
-            <h2>Receba em casa: Enviamos para todo Brasil com segurança.</h2>
+        
+        <div class="banner-slide fade">
+            <img src="Fotos/Foto 18.jpg" alt="Destaque da Coleção">
+            <div class="frase-confianca">
+                <h2>Receba em casa: Enviamos para todo Brasil com segurança.</h2>
+            </div>
         </div>
-    </div>
-    
-</section>
+        
+    </section>
 
     <section class="catalogo" id="produtos">
         <h2>Catálogo de Produtos</h2>
@@ -65,105 +71,251 @@
         <div class="lista-produtos"> 
             
             <div class="produto" 
+                 onclick="openProductModal('brinco-argola-torcida-1')"
                  data-nome="Brincos Argola Torcida" 
                  data-preco="39.90" 
                  data-id="brinco-argola-torcida-1"
-                 data-imagem-url="Caminho/para/ArgolaTorcida-hover.jpg" 
-                 data-imagem-hover-url="Caminho/para/ArgolaTorcida-hover.jpg"> 
+                 data-descricao="Brincos de Prata 925 com design moderno. Leves e confortáveis para o dia a dia. Acompanha certificado de garantia e autenticidade."> 
                 
                 <div class="produto-imagens"> 
-                    <img src="Fotos/Foto 15.png" alt="Brincos Argola Torcida Principal" class="img-principal">
-                    <img src="Fotos/Foto 11.png" alt="Brincos Argola Torcida Hover" class="img-hover">
+                    <img src="Fotos/Foto 1.png" alt="Brincos Argola Torcida Principal" class="img-principal">
+                    <img src="Fotos/Foto 2.png" alt="Brincos Argola Torcida Hover" class="img-hover">
                 </div>
                 
                 <div class="produto-info">
                     <h3>Brincos Argola Torcida</h3>
                     <p>R$ 39,90</p>
                 </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brincos Argola Torcida" data-preco="39.90" data-id="brinco-argola-torcida-1">Adicionar ao Carrinho</button>
             </div>
             
             <div class="produto" 
+                 onclick="openProductModal('pulseira-medalhas-2')"
                  data-nome="Pulseira Pingente Medalhas" 
                  data-preco="54.90" 
                  data-id="pulseira-medalhas-2"
-                 data-imagem-url="" 
-                 data-imagem-hover-url="Caminho/para/PulseiraMedalhas-hover.jpg"> 
+                 data-descricao="Pulseira em Prata 925 com pingentes de medalhas delicadas. Ideal para criar composições com outras pulseiras."> 
                 
                 <div class="produto-imagens"> 
-                    <img src="Caminho/para/PulseiraMedalhas-principal.jpg" alt="Pulseira Pingente Medalhas Principal" class="img-principal">
-                    <img src="Caminho/para/PulseiraMedalhas-hover.jpg" alt="Pulseira Pingente Medalhas Hover" class="img-hover">
+                    <img src="Fotos/Foto 3.png" alt="Pulseira Pingente Medalhas Principal" class="img-principal">
+                    <img src="Fotos/Foto 4.png" alt="Pulseira Pingente Medalhas Hover" class="img-hover">
                 </div>
                 
                 <div class="produto-info">
                     <h3>Pulseira Pingente Medalhas</h3>
                     <p>R$ 54,90</p>
                 </div>
+                <button class="botao-adicionar-carrinho" data-nome="Pulseira Pingente Medalhas" data-preco="54.90" data-id="pulseira-medalhas-2">Adicionar ao Carrinho</button>
             </div>
 
             <div class="produto" 
+                 onclick="openProductModal('brinco-argola-torcida-2')"
                  data-nome="Brincos Argola Torcida" 
                  data-preco="54.90" 
                  data-id="brinco-argola-torcida-2"
-                 data-imagem-url="Caminho/para/ArgolaTorcida-54-principal.jpg" 
-                 data-imagem-hover-url="Caminho/para/ArgolaTorcida-54-hover.jpg"> 
+                 data-descricao="Versão maior da nossa argola torcida clássica. Prata 925 com acabamento de alto brilho. Perfeito para quem busca um acessório marcante."> 
                 
                 <div class="produto-imagens"> 
-                    <img src="Caminho/para/ArgolaTorcida-54-principal.jpg" alt="Brincos Argola Torcida 54 Principal" class="img-principal">
-                    <img src="Caminho/para/ArgolaTorcida-54-hover.jpg" alt="Brincos Argola Torcida 54 Hover" class="img-hover">
+                    <img src="Fotos/Foto 5.png" alt="Brincos Argola Torcida 54 Principal" class="img-principal">
+                    <img src="Fotos/Foto 6 (2).png" alt="Brincos Argola Torcida 54 Hover" class="img-hover">
                 </div>
                 
                 <div class="produto-info">
                     <h3>Brincos Argola Torcida</h3>
                     <p>R$ 54,90</p>
                 </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brincos Argola Torcida" data-preco="54.90" data-id="brinco-argola-torcida-2">Adicionar ao Carrinho</button>
             </div>
             
             <div class="produto" 
+                 onclick="openProductModal('anel-solitario-coracao-3')"
                  data-nome="Anel Solitário de Corações" 
                  data-preco="29.90" 
                  data-id="anel-solitario-coracao-3"
-                 data-imagem-url="Caminho/para/AnelCoracao-principal.jpg" 
-                 data-imagem-hover-url="Caminho/para/AnelCoracao-hover.jpg"> 
+                 data-descricao="Anel minimalista em Prata, ideal para ser usado em mix. Design de corações vazados com pequeno ponto de luz."> 
                 
                 <div class="produto-imagens"> 
-                    <img src="Caminho/para/AnelCoracao-principal.jpg" alt="Anel Solitário de Corações Principal" class="img-principal">
-                    <img src="Caminho/para/AnelCoracao-hover.jpg" alt="Anel Solitário de Corações Hover" class="img-hover">
+                    <img src="Fotos/Foto 6.png" alt="Anel Solitário de Corações Principal" class="img-principal">
+                    <img src="Fotos/Foto 7.png" alt="Anel Solitário de Corações Hover" class="img-hover">
                 </div>
                 
                 <div class="produto-info">
                     <h3>Anel Solitário de Corações</h3>
                     <p>R$ 29,90</p>
                 </div>
+                <button class="botao-adicionar-carrinho" data-nome="Anel Solitário de Corações" data-preco="29.90" data-id="anel-solitario-coracao-3">Adicionar ao Carrinho</button>
             </div>
 
             <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
                  data-nome="Brinco de Argola Cravejada" 
                  data-preco="54.90" 
                  data-id="brinco-argola-cravejada-4"
-                 data-imagem-url="Caminho/para/ArgolaCravejada-principal.jpg" 
-                 data-imagem-hover-url="Caminho/para/ArgolaCravejada-hover.jpg"> 
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
                 
                 <div class="produto-imagens"> 
-                    <img src="Caminho/para/ArgolaCravejada-principal.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
-                    <img src="Caminho/para/ArgolaCravejada-hover.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                    <img src="Fotos/Foto 8.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 9.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
                 
                 <div class="produto-info">
                     <h3>Brinco de Argola Cravejada</h3>
                     <p>R$ 54,90</p>
                 </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
             </div>
-            
+
+            <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 10.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 11.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
             </div>
+
+             <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 12.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 13.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+             <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 15.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 14.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 16.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 16.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 17.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 18.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 19.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 20.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto" 
+                 onclick="openProductModal('brinco-argola-cravejada-4')"
+                 data-nome="Brinco de Argola Cravejada" 
+                 data-preco="54.90" 
+                 data-id="brinco-argola-cravejada-4"
+                 data-descricao="Clássica argola cravejada com microzircônias. Prata 925. Brilho intenso e elegância garantida para qualquer ocasião."> 
+                
+                <div class="produto-imagens"> 
+                    <img src="Fotos/Foto 21.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
+                    <img src="Fotos/Foto 22.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
+                </div>
+                
+                <div class="produto-info">
+                    <h3>Brinco de Argola Cravejada</h3>
+                    <p>R$ 54,90</p>
+                </div>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="brinco-argola-cravejada-4">Adicionar ao Carrinho</button>
+            </div>
+
+        </div>
     </section>
 
+    <div id="product-modal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" onclick="closeProductModal()">&times;</span>
+            <div id="modal-corpo">
+            </div>
+        </div>
+    </div>
+    
     <div id="carrinho-lateral" class="carrinho-lateral">
         <div class="carrinho-header">
             <h3>Seu Carrinho</h3>
             <button id="fechar-carrinho">&times;</button>
         </div>
         <div id="itens-carrinho">
-            </div>
+        </div>
         <div class="carrinho-rodape">
             <div class="total-carrinho">
                 <span>Total:</span>
@@ -193,7 +345,7 @@
                     Contato via WhatsApp
                 </a>
                 
-                <a href="https://www.instagram.com/SEU_INSTAGRAM_AQUI" target="_blank" class="social-link">
+                <a href="https://www.instagram.com/kcpratas_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">
                     Siga no Instagram
                 </a>
                 <p class="email">Email: seuemail@kcapratas.com.br</p>
@@ -201,7 +353,7 @@
         </div>
         
         <div class="footer-copyright">
-            <p>&copy; 2024 KC Pratas. Todos os direitos reservados.</p>
+            <p>&copy; 2025 KC Pratas. Todos os direitos reservados.</p>
         </div>
     </footer>
 
