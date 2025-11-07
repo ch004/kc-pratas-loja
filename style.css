@@ -599,6 +599,7 @@ a:hover {
     .lista-produtos {
         grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanho igual */
         gap: 15px; /* Espaçamento ajustado para não ficar muito apertado */
+        justify-content: center;
         justify-items: center; /* Centraliza os itens na tela */
         padding: 0 10px; /* Adiciona um pequeno padding nas laterais do celular */
     }
