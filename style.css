@@ -596,7 +596,7 @@ a:hover {
 
 @media (max-width: 768px) {
 
-    .catalogo-produtos {
+    .lista-produtos {
         grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanho igual */
         gap: 15px; /* Espaçamento ajustado para não ficar muito apertado */
         justify-items: center; /* Centraliza os itens na tela */
