@@ -53,7 +53,7 @@ a:hover {
 }
 
 .logo img {
-    height: 60px; /* Tamanho do logo ajustado */
+    height: 60px; /* Tamanho do logo ajustado (será ajustado novamente no HTML) */
 }
 
 /* NAVEGAÇÃO DESKTOP */
@@ -156,11 +156,10 @@ a:hover {
 
 
 /* =================================== */
-/* 3. CATÁLOGO DE PRODUTOS - CORRIGIDO ALINHAMENTO */
+/* 3. CATÁLOGO DE PRODUTOS */
 /* =================================== */
 
 .catalogo {
-    /* Agora posicionado abaixo do banner devido ao margin-bottom acima */
     padding: 20px; 
     text-align: center;
     max-width: 1200px;
@@ -168,7 +167,7 @@ a:hover {
 }
 
 .lista-produtos {
-    display: flex;
+    display: flex; /* Flexbox para Desktop */
     flex-wrap: wrap; 
     justify-content: center; /* Centraliza os produtos */
     gap: 25px; /* Espaço entre os produtos */
@@ -176,7 +175,7 @@ a:hover {
 }
 
 .produto {
-    width: 220px; 
+    width: 220px; /* Largura ideal para desktop */
     min-width: 180px;
     flex-grow: 1;
     cursor: pointer;
@@ -192,19 +191,15 @@ a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Seção 3: CATÁLOGO DE PRODUTOS */
-
 .produto-imagens {
     position: relative;
     overflow: hidden;
-    /* Altura que você escolheu (Ex: 350px) */
     height: 300px; 
 }
 
 .produto-imagens img {
     width: 100%;
-    height: 100%; /* Ocupa 100% da altura rígida acima */
-    /* ESSENCIAL: Garante que a imagem preencha o espaço, cortando o excesso se necessário, mantendo o padrão */
+    height: 100%; 
     object-fit: cover; 
     display: block;
 }
@@ -274,7 +269,7 @@ a:hover {
 
 .modal-conteudo {
     background-color: #fefefe;
-    margin: 10% auto; /* 10% de cima e centralizado */
+    margin: 10% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 90%; 
@@ -575,6 +570,7 @@ a:hover {
 /* 7. MEDIA QUERIES (RESPONSIVIDADE) */
 /* =================================== */
 
+/* Regras aplicadas em telas menores que 900px */
 @media (max-width: 900px) {
     .modal-conteudo {
         width: 95%;
@@ -594,22 +590,9 @@ a:hover {
     }
 }
 
+/* Regras aplicadas em telas menores que 768px (Tablet/Mobile) */
 @media (max-width: 768px) {
 
-    .lista-produtos {
-        grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanho igual */
-        gap: 15px; /* Espaçamento ajustado para não ficar muito apertado */
-        justify-content: center;
-        justify-items: center; /* Centraliza os itens na tela */
-        padding: 0 10px; /* Adiciona um pequeno padding nas laterais do celular */
-    }
-    
-    /* Regra opcional para garantir que o tamanho mínimo de cada produto funcione bem */
-    .produto {
-        min-width: unset; /* Remove o min-width para o layout de 2 colunas funcionar */
-        width: 100%; /* Garante que o produto ocupe metade do espaço */
-    }
-    
     /* HEADER E NAVEGAÇÃO MOBILE */
     .container-header {
         padding: 0 10px;
@@ -652,29 +635,44 @@ a:hover {
         padding: 15px 20px;
     }
 
-    /* CARRINHO */
-    .carrinho-lateral.aberto {
-        width: 100%;
-    }
-    
-    /* CATÁLOGO */
+    /* CATÁLOGO: FORÇA GRID DE 2 COLUNAS */
     .lista-produtos {
-        gap: 15px;
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanho igual */
+        gap: 15px; 
+        padding: 0 10px; 
+        flex-wrap: nowrap; /* Sobrescreve a regra do desktop */
     }
     
+    /* RESET DE LARGURA DO PRODUTO (ESSENCIAL PARA O GRID) */
     .produto {
-        width: calc(50% - 15px); /* 2 produtos por linha */
-        min-width: 150px;
+        width: 100%;    /* Ocupa 100% da coluna (1fr) */
+        min-width: unset; /* Remove o mínimo do desktop */
+        flex-grow: unset; /* Desliga o crescimento flexível do Flexbox */
+        margin: 0;      /* Remove margens extras */
+        padding-bottom: 10px; /* Mantém o padding inferior */
+    }
+
+    .produto-imagens {
+        height: 250px; /* Ajusta a altura da imagem para o mobile */
+    }
+
+    .botao-adicionar-carrinho {
+        font-size: 0.8em; 
     }
     
     /* BANNER */
     .banner-destaque {
         max-height: 350px; 
+        margin-bottom: 40px;
+    }
+    
+    .frase-confianca {
+        padding: 15px 20px;
     }
     
     .frase-confianca h2 {
         font-size: 1.2em;
-        padding: 10px 15px;
     }
     
     /* FOOTER */
@@ -688,13 +686,14 @@ a:hover {
     }
 }
 
+/* Regras aplicadas em telas menores que 480px (Celular pequeno) */
 @media (max-width: 480px) {
     .logo img {
         height: 50px; 
     }
     
-    .produto {
-        width: 100%; /* 1 produto por linha */
-        min-width: 100%;
+    /* ALTERA O GRID PARA 1 COLUNA */
+    .lista-produtos {
+        grid-template-columns: 1fr; /* 1 produto por linha */
     }
 }
