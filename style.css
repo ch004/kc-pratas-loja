@@ -120,9 +120,9 @@ a:hover {
 .banner-destaque {
     position: relative;
     width: 100%;
-    max-height: 550px; /* Altura máxima para o banner */
+    max-height: 450px; /* Altura máxima para o banner */
     overflow: hidden;
-    margin-bottom: 50px; /* ESPAÇO IMPORTANTE antes do Catálogo */
+    margin-bottom: 70px; /* ESPAÇO IMPORTANTE antes do Catálogo */
 }
 
 .banner-slide {
@@ -595,6 +595,19 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+
+    .catalogo-produtos {
+        grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanho igual */
+        gap: 15px; /* Espaçamento ajustado para não ficar muito apertado */
+        justify-items: center; /* Centraliza os itens na tela */
+        padding: 0 10px; /* Adiciona um pequeno padding nas laterais do celular */
+    }
+    
+    /* Regra opcional para garantir que o tamanho mínimo de cada produto funcione bem */
+    .produto {
+        min-width: unset; /* Remove o min-width para o layout de 2 colunas funcionar */
+        width: 100%; /* Garante que o produto ocupe metade do espaço */
+    }
     
     /* HEADER E NAVEGAÇÃO MOBILE */
     .container-header {
