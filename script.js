@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const preco = parseFloat(precoTexto); 
             
-            if (nome && preco && id) { // Removemos a verificação da imagem, pois ela pode ser o problema se o caminho estiver quebrado
+            if (nome && preco && id) { 
                 // Chama a função otimizada com quantidade padrão de 1
                 adicionarAoCarrinho(nome, preco, id, imagemUrl, 1); 
                 
@@ -223,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // E. Inicializa o Contador do Carrinho e o Carrossel
-    renderizarCarrinho();
-    showSlides(); // ESTA LINHA SÓ DEVE SER CHAMADA UMA VEZ!
+    // E. Inicializa o Contador do Carrinho, Carrossel e FILTROS (CORREÇÃO AQUI)
+    renderizarCarrinho();
+    showSlides(); 
+    inicializarFiltros(); // <<< NOVA LINHA ADICIONADA PARA O FILTRO FUNCIONAR
 });
-
 
 // =========================================================
 // 6. LÓGICA DO MODAL DE DETALHES DO PRODUTO 
@@ -368,3 +368,39 @@ window.addEventListener('load', function() {
     // Esta linha garante que a página comece no topo e NADA MAIS a mova
     window.scrollTo(0, 0); 
 });
+
+// =========================================================
+// 10. LÓGICA DE FILTRAGEM DE PRODUTOS 
+// =========================================================
+
+/**
+ * Adiciona ouvintes de evento aos botões de filtro e esconde/mostra produtos
+ * no catálogo com base no atributo data-categoria.
+ */
+function inicializarFiltros() {
+    const botoesFiltro = document.querySelectorAll('.filtro-btn');
+    const produtos = document.querySelectorAll('.produto');
+
+
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const filtroSelecionado = botao.getAttribute('data-filtro');
+
+            // 1. Atualiza a classe 'ativo'
+            botoesFiltro.forEach(b => b.classList.remove('ativo'));
+            botao.classList.add('ativo');
+
+            // 2. Itera sobre todos os produtos e filtra
+            produtos.forEach(produto => {
+                const categoriaProduto = produto.getAttribute('data-categoria');
+
+                // Garante que 'todos' ou a categoria correta exiba o produto
+                if (filtroSelecionado === 'todos' || filtroSelecionado === categoriaProduto) {
+                    produto.style.display = 'block'; 
+                } else {
+                    produto.style.display = 'none'; 
+                }
+            });
+        });
+    });
+}

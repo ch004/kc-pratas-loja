@@ -154,6 +154,53 @@ a:hover {
     color: #333;
 }
 
+/* =================================== */
+/* 3. FILTROS DE CATEGORIA (NOVO) */
+/* =================================== */
+
+.filtros-categoria {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.filtros-categoria h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.botoes-filtros {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px; 
+}
+
+.filtro-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.9em;
+    white-space: nowrap; 
+}
+
+.filtro-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* ESTILO DO BOTÃO ATIVO */
+.filtro-btn.ativo {
+    background-color: #333; 
+    color: white; 
+    border-color: #333;
+}
 
 /* =================================== */
 /* 3. CATÁLOGO DE PRODUTOS */
@@ -167,10 +214,12 @@ a:hover {
 }
 
 .lista-produtos {
-    display: flex; /* Flexbox para Desktop */
+    display: grid; /* Flexbox para Desktop */
+    repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
     flex-wrap: wrap; 
     justify-content: center; /* Centraliza os produtos */
-    gap: 25px; /* Espaço entre os produtos */
     margin-top: 30px;
 }
 
