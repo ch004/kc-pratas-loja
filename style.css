@@ -646,10 +646,10 @@ a:hover {
     
     /* RESET DE LARGURA DO PRODUTO (ESSENCIAL PARA O GRID) */
     .produto {
-        width: 100%;    /* Ocupa 100% da coluna (1fr) */
-        min-width: unset; /* Remove o mínimo do desktop */
-        flex-grow: unset; /* Desliga o crescimento flexível do Flexbox */
-        margin: 0;      /* Remove margens extras */
+        width: 100% !important;;  
+        min-width: unset !important;; /* Remove o mínimo do desktop */
+        flex-grow: unset !important;; /* Desliga o crescimento flexível do Flexbox */
+        margin: 0 !important;;      /* Remove margens extras */
         padding-bottom: 10px; /* Mantém o padding inferior */
     }
 
