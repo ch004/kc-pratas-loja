@@ -718,8 +718,9 @@ a:hover {
 }
 
 #menu-links.aberto {
+    #menu-links.aberto {
     transform: translateX(0);
-    visibility: visible; /* Torna visível ao abrir */
+    visibility: visible;
 }
 /* Fim da correção do #menu-links */
     
