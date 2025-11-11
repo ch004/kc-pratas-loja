@@ -114,7 +114,7 @@ a:hover {
         /* order: -1; <-- VOCÊ TINHA ISSO, QUE COLOCA NA ESQUERDA. */
 
         /* MUDE O 'order' para que ele fique no final, antes do carrinho (ou depois) */
-        order: 2; /* Coloca o hambúrguer no final, após o logo e a navegação (se visível) */
+        order: 3; /* Coloca o hambúrguer no final, após o logo e a navegação (se visível) */
         
         /* O carrinho geralmente é o último elemento no HTML. Vamos garantir que ele fique ao lado: */
     }
@@ -134,7 +134,7 @@ a:hover {
     /* O carrinho, se for o último elemento no HTML, terá a ordem padrão mais alta. */
     /* Se ele tiver uma classe como .botoes-topo, adicione: */
     .botoes-topo { /* Exemplo: se o carrinho estiver dentro de uma div .botoes-topo */
-        order: 3; /* Garante que fique na extrema direita */
+        order: 4; /* Garante que fique na extrema direita */
     }
 
 /* Botão Hambúrguer (Escondido por padrão no Desktop) */
