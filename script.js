@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlides(); 
     inicializarFiltros(); // <<< NOVA LINHA ADICIONADA PARA O FILTRO FUNCIONAR
 
-    // =========================================================
+ // =========================================================
 // LÓGICA DO MENU HAMBÚRGUER (CORRIGIDA E FUNCIONAL)
 // =========================================================
 const menuLinks = document.getElementById('menu-links'); 
@@ -261,7 +261,7 @@ if (menuLinks && menuHamburguerBtn) {
     // **A CORREÇÃO CRÍTICA:**
     // 1. Adiciona o listener de clique no botão hambúrguer.
     // 2. Usa e.stopPropagation() para impedir que o clique vá para o 'document',
-    //    resolvendo o erro de ele fechar imediatamente após abrir.
+    //    resolvendo o erro de ele fechar imediatamente após abrir.
     menuHamburguerBtn.addEventListener('click', (e) => {
         e.stopPropagation(); 
         toggleMenu(); // Abre/Fecha o menu ao clicar
@@ -284,10 +284,6 @@ if (menuLinks && menuHamburguerBtn) {
     });
     */
 }
-
-}); // <<<<<< ESTA LINHA PERMANECE COMO A ÚLTIMA DO DOMContentLoaded
-
-
 
 
 // =========================================================
