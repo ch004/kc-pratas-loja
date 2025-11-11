@@ -158,6 +158,28 @@ function finalizarCompraWhatsapp() {
     window.open(url, '_blank');
 }
 
+// =========================================================
+// 8. FUNÇÃO DO MENU HAMBÚRGUER (NOVA)
+// =========================================================
+
+/**
+ * Alterna a visibilidade do menu de navegação lateral (Hambúrguer)
+ */
+function toggleMenu() {
+    const menu = document.getElementById('menu-links');
+    if (menu) {
+        menu.classList.toggle('aberto');
+    }
+}
+
+// Adicione esta função em algum lugar do seu script.js (ex: perto de toggleMenu)
+function closeMenu() {
+    const menu = document.getElementById('menu-links');
+    if (menu) {
+        // Se a classe 'aberto' está lá, remova-a (fechando o menu)
+        menu.classList.remove('aberto');
+    }
+}
 
 // ===================================
 // 5. INICIALIZAÇÃO E CONEXÃO (RODA DEPOIS DO HTML ESTAR PRONTO)
@@ -371,28 +393,6 @@ function adicionarAoCarrinhoDoModal(botao) {
 }
 
 
-// =========================================================
-// 8. FUNÇÃO DO MENU HAMBÚRGUER (NOVA)
-// =========================================================
-
-/**
- * Alterna a visibilidade do menu de navegação lateral (Hambúrguer)
- */
-function toggleMenu() {
-    const menu = document.getElementById('menu-links');
-    if (menu) {
-        menu.classList.toggle('aberto');
-    }
-}
-
-// Adicione esta função em algum lugar do seu script.js (ex: perto de toggleMenu)
-function closeMenu() {
-    const menu = document.getElementById('menu-links');
-    if (menu) {
-        // Se a classe 'aberto' está lá, remova-a (fechando o menu)
-        menu.classList.remove('aberto');
-    }
-}
 
 // =========================================================
 // 9. CORREÇÃO DE ROLAGEM INVOLUNTÁRIA (FORÇADA)
