@@ -692,7 +692,7 @@ a:hover {
         /* ... ou você pode estilizá-la como um menu lateral, como já está fazendo no #menu-links ... */
         order: 2; 
     }
-    
+}
     /* --- O RESTANTE DO SEU CÓDIGO DA MEDIA QUERY CONTINUA AQUI ABAIXO --- */
     
     /* O conteúdo interno do menu deve ser a barra lateral branca real */
