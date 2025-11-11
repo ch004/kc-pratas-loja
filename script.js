@@ -272,18 +272,19 @@ if (menuLinks && menuHamburguerBtn) {
         link.addEventListener('click', closeMenu);
     });
 
-    /*
-    // OPCIONAL: Se você decidir mais tarde que quer fechar ao clicar fora do menu,
-    // basta descomentar o bloco abaixo.
-    document.addEventListener('click', (e) => {
-        if (menuLinks.classList.contains('aberto')) {
-            if (!menuHamburguerBtn.contains(e.target) && !menuLinks.contains(e.target)) {
-                menuLinks.classList.remove('aberto'); 
-            }
-        }
-    });
-    */
+    // ... CÓDIGO FINAL DA SEÇÃO 5, APÓS A LÓGICA DO MENU HAMBÚRGUER:
+// ...
+
+// Fechamento do bloco 'if (menuLinks && menuHamburguerBtn)'
 }
+
+// ESTE É O LUGAR ONDE O FECHAMENTO DO DOMContentLoaded ESTÁ FALTANDO:
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+// INSERIR AQUI:
+}); 
+
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 
 // =========================================================
