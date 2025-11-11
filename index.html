@@ -15,17 +15,26 @@
                 <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
             </div>
             
-            <button class="menu-hamburguer" onclick="toggleMenu()">
-                &#9776; 
-            </button>
-
-            <nav id="menu-links"> 
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+           <nav class="menu-navegacao">
+    <button class="menu-hamburguer" onclick="toggleMenu()">
+        &#9776; </button>
+    
+    <div class="menu-links" id="menu-links">
+        
+       
+        <div class="menu-categorias">
+            <h3>Categorias</h3>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('anel'); closeMenu();">Anéis</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('brinco'); closeMenu();">Brinco</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('colar'); closeMenu();">Colar</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('corrente'); closeMenu();">Correntes</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('pingente'); closeMenu();">Pingentes</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('pulseira'); closeMenu();">Pulseiras</a>
+            <a href="#" class="categoria-link" onclick="filtrarProdutos('todos'); closeMenu();">Ver Todos</a>
+        </div>
+        
+    </div>
+</nav>
             
             <button id="abrir-carrinho" class="botao-carrinho"> 
                 🛒 <span id="contador-carrinho">0</span>
@@ -37,31 +46,26 @@
     <section class="banner-destaque" id="inicio"> 
         
         <div class="banner-slide fade">
-            <img src="Fotos/Foto Carrossel.png" alt="Destaque de coleção de pratas">
+            <img src="Fotos/Foto 14.png" alt="Destaque de coleção de pratas">
             <div class="frase-confianca">
                 <h2>Prata 925 de qualidade, entrega rápida e garantia de autenticidade.</h2>
             </div>
         </div>
         <div class="banner-slide fade">
-            <img src="Fotos/Foto carrossel 2.png" alt="Promoção da Semana">
+            <img src="Fotos/Foto 1.png" alt="Promoção da Semana">
             <div class="frase-confianca">
                 <h2>NOVIDADE: Conheça nossa nova coleção de Prata legítima.</h2>
             </div>
         </div>
         
         <div class="banner-slide fade">
-            <img src="Fotos/carrossel.png" alt="Coleção Pura">
+            <img src="Fotos/Foto autismo.jpg" alt="Coleção Pura">
             <div class="frase-confianca">
                 <h2>Brilhe todos os dias com joias que refletem sua essência e elegância.</h2>
             </div>
         </div>
         
-        <div class="banner-slide fade">
-            <img src="Fotos/Foto 18.jpg" alt="Destaque da Coleção">
-            <div class="frase-confianca">
-              <h2>Receba em casa: Enviamos para todo Brasil com segurança.</h2>
-            </div>
-        </div>
+       
         
     </section>
 
@@ -90,7 +94,7 @@
                  data-nome="Anel coração vazado com bolinhas" 
                  data-preco="27.90" 
                  data-id="Colar-Ponto-de-Luz-Zircônia-1"
-                 data-descricao="Anel regulável com coração vazado e detalhe de seta. Romântico e estiloso, ajusta perfeitamente ao dedo."> 
+                 data-descricao="Anel delicado com coração vazado e detalhes em bolinhas ao redor. Feminino, moderno e regulável."> 
                 
                 <div class="produto-imagens"> 
                     <img src="Fotos/Anel 1.jpg" alt="Colar-Ponto-de-Luz-Zircônia-1" class="img-principal">
@@ -187,7 +191,7 @@
              <div class="produto" 
                  data-categoria="brinco" onclick="openProductModal('Brinco-de-Trevo-Vazado-2')"
                  data-nome="Brinco de Trevo Vazado" 
-                 data-preco="54.90" 
+                 data-preco="19.90" 
                  data-id="Brinco-de-Trevo-Vazado-2"
                  data-descricao="Trevo vazado em Prata de Lei (925). Design leve e moderno. Peça que simboliza sorte e adiciona charme sutil."> 
                 
@@ -274,7 +278,7 @@
                 
                 <div class="produto-info">
                     <h3>Argola com Pingente de Coração</h3>
-                    <p>R$ 49,90</p>
+                    <p>R$ 39,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="Argola-com-Pingente-de-Coração-1">Adicionar ao Carrinho</button>
             </div>
@@ -321,7 +325,7 @@
             <div class="produto" 
                  data-categoria="colar" onclick="openProductModal('Colar-Pingente-Zircônia-Coração-1')"
                  data-nome="Colar Pingente Trevo" 
-                 data-preco="44,90" 
+                 data-preco="47,90" 
                  data-id="Colar-Pingente-Zircônia-Coração-1"
                  data-descricao="Colar delicado com pingente de coração em zircônia, garantindo brilho intenso e acabamento elegante. Corrente de 40cm, ideal para uso diário ou para compor mix de colares. Romântico, moderno e perfeito para presentear. Antialérgico."> 
                 
@@ -334,13 +338,13 @@
                     <h3>Colar Pingente Zircônia Coração</h3>
                     <p>R$ 47,90</p>
                 </div>
-                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="Colar-Pingente-Zircônia-Coração-1">Adicionar ao Carrinho</button>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="47.90" data-id="Colar-Pingente-Zircônia-Coração-1">Adicionar ao Carrinho</button>
             </div>
 
             <div class="produto" 
                  data-categoria="colar" onclick="openProductModal('Colar-de-Trevo-Vazado-50cm')"
                  data-nome="Colar de Trevo Vazado 50cm" 
-                 data-preco="51.90" 
+                 data-preco="44.90" 
                  data-id="Colar-de-Trevo-Vazado-50cm"
                  data-descricao="Feito em prata 925 legítima, perfeito para quem ama acessórios delicados e cheios de personalidade."> 
                 
@@ -407,10 +411,10 @@
                 </div>
                 
                 <div class="produto-info">
-                    <h3>Brinco de Argola Cravejada</h3>
+                    <h3>Corrente Cadeado 50cm</h3>
                     <p>R$ 24,90</p>
                 </div>
-                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="54.90" data-id="Corrente-Cadeado-50cm">Adicionar ao Carrinho</button>
+                <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="24.90" data-id="Corrente-Cadeado-50cm">Adicionar ao Carrinho</button>
             </div>
 
 
@@ -427,7 +431,7 @@
                 </div>
                 
                 <div class="produto-info">
-                    <h3>Pulseira corrente coração 3.4 19cm</h3>
+                    <h3>Pulseira corrente coração</h3>
                     <p>R$ 37,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="37.90" data-id="Pulseira-corrente-coração-3.4-19">Adicionar ao Carrinho</button>
@@ -438,7 +442,7 @@
                  data-nome="Pulseira corrente grumet com bolas" 
                  data-preco="27.90" 
                  data-id="Pulseira-corrente-grumet-com-bolas"
-                 data-descricao="Argola clássica com pingente de coração removível. Versátil e confortável em Prata 925."> 
+                 data-descricao="Pulseira com corrente grumet e pequenas bolas decorativas. Tamanho 18cm. Combina estilo moderno com delicadeza."> 
                 
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pulseira 4.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
@@ -497,7 +501,7 @@
                  data-nome="Pingente Trevo Vazado" 
                  data-preco="14.90" 
                  data-id="Pingente-Trevo-Vazado"
-                 data-descricao="Pulseira de malha fina com pingente de coração. Possui extensor para ajuste. Peça elegante em Prata 925."> 
+                 data-descricao="Feito em prata 925 legítima, com design delicado que simboliza amor e elegância em cada detalhe."> 
                 
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pingente 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
@@ -515,9 +519,9 @@
             <div class="produto" 
                  data-categoria="pingente"onclick="openProductModal('Pingente-de-Coração-3')"
                  data-nome="Pingente de Coração" 
-                 data-preco="54.90" 
+                 data-preco="13.90" 
                  data-id="Pingente-de-Coração-3"
-                 data-descricao="Argola clássica com pingente de coração removível. Versátil e confortável em Prata 925."> 
+                 data-descricao="Feito em prata 925 legítima, com acabamento delicado e brilho que realça sua beleza com um toque romântico"> 
                 
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pingente 3.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
@@ -568,7 +572,6 @@
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#produtos">Catálogo</a></li>
-                    <li><a href="#">Trocas e Devoluções</a></li>
                 </ul>
             </div>
             
@@ -582,7 +585,7 @@
                 <a href="https://www.instagram.com/kcpratas_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">
                     Siga no Instagram
                 </a>
-                <p class="email">Email: seuemail@kcapratas.com.br</p>
+                <p class="email">Email: kcpratas@yahoo.com</p>
             </div>
         </div>
         

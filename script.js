@@ -95,38 +95,38 @@ function renderizarCarrinho() {
 // 3. Lógica do Carrossel (Banner)
 // ===================================
 
-let slideIndex = 1; 
+let slideIndex = 1; // Deixe a inicialização como 1, mas a lógica corrigida resolve o problema de pulo.
 
 function showSlides() {
-    let i;
-    let slides = document.querySelectorAll(".banner-slide");
+    let i;
+    let slides = document.querySelectorAll(".banner-slide");
+    const totalSlides = slides.length; // Pega o total de slides
 
-    // ... código que troca o slide ...
-    
-    slideIndex++;
-    
-    // ESTA É A LINHA SUSPEITA: COMENTE-A
-    // setTimeout(showSlides, 4000);
-    
-    if (slides.length === 0) {
-        // console.warn("Carrossel: Não foram encontrados slides.");
-        return; 
-    }
+    if (totalSlides === 0) {
+        return; 
+    }
 
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    
-    slides[slideIndex - 1].style.display = "block";  
-    
-    slideIndex++;
-    
-    setTimeout(showSlides, 4000); 
+    // 1. Incrementa o índice
+    slideIndex++; 
+
+    // 2. Verifica se precisa voltar para o primeiro (Reinicialização)
+    if (slideIndex > totalSlides) {
+        slideIndex = 1; // Volta para o slide 1
+    }
+    
+    // 3. Esconde todos os slides
+    for (i = 0; i < totalSlides; i++) {
+        slides[i].style.display = "none";  
+    }
+    
+    // 4. Mostra o slide atual
+    slides[slideIndex - 1].style.display = "block";  
+    
+    // 5. Chama a função novamente após 4 segundos
+    setTimeout(showSlides, 4000); 
 }
+
+// Nota: A chamada inicial para showSlides() deve estar no seu document.addEventListener('DOMContentLoaded', ...)
 
 
 // ===================================
@@ -227,7 +227,32 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrinho();
     showSlides(); 
     inicializarFiltros(); // <<< NOVA LINHA ADICIONADA PARA O FILTRO FUNCIONAR
-});
+
+    // =========================================================
+// LÓGICA DE FECHAR MENU HAMBÚRGUER AO CLICAR FORA (NO FINAL)
+// =========================================================
+    const menuLinks = document.getElementById('menu-links'); 
+    const menuHamburguerBtn = document.querySelector('.menu-hamburguer'); 
+
+    if (menuLinks && menuHamburguerBtn) {
+        document.addEventListener('click', (e) => {
+            // Verifica se o menu está aberto
+            if (menuLinks.classList.contains('aberto')) {
+                
+                // Se o clique NÃO foi no botão do hambúrguer E
+                // se o clique NÃO foi DENTRO da área do menuLinks (a barra lateral branca)
+                if (!menuHamburguerBtn.contains(e.target) && !menuLinks.contains(e.target)) {
+                    
+                    // Fecha o menu.
+                    menuLinks.classList.remove('aberto'); 
+                }
+            }
+        });
+    }
+}); // <<<<<< ESTA LINHA PERMANECE COMO A ÚLTIMA DO DOMContentLoaded
+
+
+
 
 // =========================================================
 // 6. LÓGICA DO MODAL DE DETALHES DO PRODUTO 
@@ -343,6 +368,15 @@ function toggleMenu() {
     const menu = document.getElementById('menu-links');
     if (menu) {
         menu.classList.toggle('aberto');
+    }
+}
+
+// Adicione esta função em algum lugar do seu script.js (ex: perto de toggleMenu)
+function closeMenu() {
+    const menu = document.getElementById('menu-links');
+    if (menu) {
+        // Se a classe 'aberto' está lá, remova-a (fechando o menu)
+        menu.classList.remove('aberto');
     }
 }
 
