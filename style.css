@@ -41,7 +41,7 @@ a:hover {
     padding: 10px 20px;
     position: sticky; /* Fixa o header no topo */
     top: 0;
-    z-index: 100; /* Garante que fique acima do conteúdo */
+    z-index: 300; /* Garante que fique acima do conteúdo */
 }
 
 .container-header {
