@@ -229,26 +229,40 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarFiltros(); // <<< NOVA LINHA ADICIONADA PARA O FILTRO FUNCIONAR
 
     // =========================================================
-// LÓGICA DE FECHAR MENU HAMBÚRGUER AO CLICAR FORA (NO FINAL)
+// LÓGICA DO MENU HAMBÚRGUER (CORRIGIDA E FUNCIONAL)
 // =========================================================
-    const menuLinks = document.getElementById('menu-links'); 
-    const menuHamburguerBtn = document.querySelector('.menu-hamburguer'); 
+const menuLinks = document.getElementById('menu-links'); 
+const menuHamburguerBtn = document.querySelector('.menu-hamburguer'); 
 
-    if (menuLinks && menuHamburguerBtn) {
-        document.addEventListener('click', (e) => {
-            // Verifica se o menu está aberto
-            if (menuLinks.classList.contains('aberto')) {
-                
-                // Se o clique NÃO foi no botão do hambúrguer E
-                // se o clique NÃO foi DENTRO da área do menuLinks (a barra lateral branca)
-                if (!menuHamburguerBtn.contains(e.target) && !menuLinks.contains(e.target)) {
-                    
-                    // Fecha o menu.
-                    menuLinks.classList.remove('aberto'); 
-                }
+if (menuLinks && menuHamburguerBtn) {
+    
+    // **A CORREÇÃO CRÍTICA:**
+    // 1. Adiciona o listener de clique no botão hambúrguer.
+    // 2. Usa e.stopPropagation() para impedir que o clique vá para o 'document',
+    //    resolvendo o erro de ele fechar imediatamente após abrir.
+    menuHamburguerBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        toggleMenu(); // Abre/Fecha o menu ao clicar
+    });
+
+    // FUNCIONALIDADE EXTRA: Fechar o menu ao clicar em qualquer link (Anéis, Colares, etc.)
+    document.querySelectorAll('#menu-links a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    /*
+    // OPCIONAL: Se você decidir mais tarde que quer fechar ao clicar fora do menu,
+    // basta descomentar o bloco abaixo.
+    document.addEventListener('click', (e) => {
+        if (menuLinks.classList.contains('aberto')) {
+            if (!menuHamburguerBtn.contains(e.target) && !menuLinks.contains(e.target)) {
+                menuLinks.classList.remove('aberto'); 
             }
-        });
-    }
+        }
+    });
+    */
+}
+
 }); // <<<<<< ESTA LINHA PERMANECE COMO A ÚLTIMA DO DOMContentLoaded
 
 
