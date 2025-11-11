@@ -688,7 +688,7 @@ a:hover {
     }
 
     .menu-navegacao {
-        display: none; /* A navegação desktop (Home, Catálogo) é escondida no mobile */
+        display: block; /* A navegação desktop (Home, Catálogo) é escondida no mobile */
         /* ... ou você pode estilizá-la como um menu lateral, como já está fazendo no #menu-links ... */
         order: 2; 
     }

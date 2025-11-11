@@ -11,42 +11,38 @@
     <header class="header">
     <div class="container-header">
         
-        <div class="logo">
-            <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
+        <button class="menu-hamburguer" onclick="toggleMenu()">
+            &#9776; </button>
+
+        <a href="#" class="logo">
+            <img src="Fotos/Logo.jpg" alt="KC Pratas Logo" height="100px">
+        </a>
+
+        <nav class="menu-navegacao" id="menu-links">
+            <ul>
+                <li><a href="#home" onclick="closeMenu()">Início</a></li>
+                <li><a href="#catalogo" onclick="closeMenu()">Catálogo</a></li>
+                <li><a href="#sobre" onclick="closeMenu()">Sobre Nós</a></li>
+                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+            </ul>
+
+            <div class="menu-categorias">
+                <h3>Categorias</h3>
+                <a href="#" class="categoria-link" data-filtro="aneis" onclick="closeMenu()">Anéis</a>
+                <a href="#" class="categoria-link" data-filtro="colares" onclick="closeMenu()">Colares</a>
+                </div>
+            
+        </nav>
+
+        <div class="icones-topo">
+            <button class="botao-carrinho" id="abrir-carrinho" aria-label="Abrir Carrinho">
+                🛒
+                <span id="contador-carrinho">0</span>
+            </button>
         </div>
 
-        
-        
-        <nav class="menu-navegacao">
-            
-                
-               <div id="menu-links"></div> <div class="menu-categorias">
-                    <h3>Categorias</h3>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('anel'); toggleMenu();">Anéis</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('brinco'); toggleMenu();">Brinco</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('colar'); toggleMenu();">Colar</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('corrente'); toggleMenu();">Correntes</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('pingente'); toggleMenu();">Pingentes</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('pulseira'); toggleMenu();">Pulseiras</a>
-                    <a href="#" class="categoria-link" onclick="filtrarProdutos('todos'); toggleMenu();">Ver Todos</a>
-                </div>
-                
-            </div>
-        </nav>
-        
-        <div class="icones-topo">
-            
-            <button class="menu-hamburguer" onclick="toggleMenu()">
-                ☰ 
-            </button>
-            
-            <button id="abrir-carrinho" class="botao-carrinho"> 
-                🛒 <span id="contador-carrinho">0</span>
-            </button>
-            
-        </div>
-        
-    </div> </header> 
+    </div>
+</header>
 
     <section class="banner-destaque" id="inicio"> 
         
