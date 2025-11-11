@@ -107,6 +107,36 @@ a:hover {
     line-height: 1;
 }
 
+/* ... Seus estilos de container-header e logo ... */
+
+    .menu-hamburguer {
+        display: block; 
+        /* order: -1; <-- VOCÊ TINHA ISSO, QUE COLOCA NA ESQUERDA. */
+
+        /* MUDE O 'order' para que ele fique no final, antes do carrinho (ou depois) */
+        order: 2; /* Coloca o hambúrguer no final, após o logo e a navegação (se visível) */
+        
+        /* O carrinho geralmente é o último elemento no HTML. Vamos garantir que ele fique ao lado: */
+    }
+
+    /* Ajuste no Container Header para forçar a ordem na tela pequena */
+    .container-header {
+        /* Garante que o container siga a ordem Flexbox */
+        justify-content: space-between; 
+    }
+
+    /* Se o carrinho for o último elemento no HTML, ele já deve estar no lado certo. */
+    /* Se o hambúrguer ainda estiver no meio, tente dar um 'order' menor para o logo. */
+    .logo {
+        order: 1; /* Garante que o logo fique na esquerda (primeiro) */
+    }
+
+    /* O carrinho, se for o último elemento no HTML, terá a ordem padrão mais alta. */
+    /* Se ele tiver uma classe como .botoes-topo, adicione: */
+    .botoes-topo { /* Exemplo: se o carrinho estiver dentro de uma div .botoes-topo */
+        order: 3; /* Garante que fique na extrema direita */
+    }
+
 /* Botão Hambúrguer (Escondido por padrão no Desktop) */
 .menu-hamburguer {
     display: none; 
