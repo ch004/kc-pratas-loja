@@ -108,7 +108,7 @@ a:hover {
 
 .logo img {
 
-    height: 60px; /* Tamanho do logo ajustado (será ajustado novamente no HTML) */
+    height: 100px; /* Tamanho do logo ajustado (será ajustado novamente no HTML) */
 
 }
 
@@ -1311,35 +1311,17 @@ a:hover {
 /* Regras aplicadas em telas menores que 768px (Tablet/Mobile) */
 
 @media (max-width: 768px) {
-
-
-
     /* HEADER E NAVEGAÇÃO MOBILE */
-
     .container-header {
-
         padding: 0 10px;
-
         /* A regra justify-content: space-between já está na seção 1 e é herdada */
-
     }
-
-
-
     /* --- REGRAS DE ORDEM E ALINHAMENTO --- */
-
-
-
     /* 1. LOGO na Esquerda */
 
     .logo {
-
         order: 1;
-
     }
-
-
-
     /* 2. NAVEGAÇÃO DESKTOP (fica no meio, mas display: none no mobile) */
 
     .menu-navegacao {
@@ -1347,8 +1329,7 @@ a:hover {
         order: 2;
 
     }
-
-   
+}
 
     /* 3. NOVO GRUPO ICONES-TOPO na Direita */
 
@@ -1366,28 +1347,6 @@ a:hover {
 
    
 
-    /* MOSTRA O HAMBÚRGUER (Agora está dentro de .icones-topo) */
-
-    .menu-hamburguer {
-
-        display: block;
-
-    }
-
-
-
-    .menu-navegacao {
-
-        display: none; /* A navegação desktop (Home, Catálogo) é escondida no mobile */
-
-        /* ... ou você pode estilizá-la como um menu lateral, como já está fazendo no #menu-links ... */
-
-        order: 2;
-
-    }
-
-}
-
     /* --- O RESTANTE DO SEU CÓDIGO DA MEDIA QUERY CONTINUA AQUI ABAIXO --- */
 
    
@@ -1395,9 +1354,6 @@ a:hover {
     /* O conteúdo interno do menu deve ser a barra lateral branca real */
 
     /* ... o restante do #menu-links ... */
-
-   
-
 
 
 #menu-links {
@@ -1545,7 +1501,7 @@ a:hover {
 
     .logo img {
 
-        height: 50px;
+        height: 70px;
 
     }
 
