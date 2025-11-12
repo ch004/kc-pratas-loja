@@ -832,3 +832,32 @@ a:hover {
         grid-template-columns: 1fr; /* 1 produto por linha */
     }
 }
+
+#menu-links {
+    display: none;
+}
+
+#menu-links.aberto {
+    display: block;
+}
+
+/* --- MENU MOBILE (NOVO CÓDIGO) --- */
+nav .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+}
+
+nav .nav-menu.active {
+    display: flex;
+}
+
+#mobile-menu {
+    display: block;
+    cursor: pointer;
+}
