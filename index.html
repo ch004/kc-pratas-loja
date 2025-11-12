@@ -9,42 +9,66 @@
 <body>
 
     <header class="header">
-    <div class="container-header">
-        
-        <a href="#" class="logo">
-            <img src="Fotos/Logo.jpg" alt="KC Pratas Logo" height="100px">
-        </a>
-
-        <nav class="menu-navegacao" id="menu-links">
-
-
-            <ul>
-                <li><a href="#home" onclick="closeMenu()">Início</a></li>
-                <li><a href="#catalogo" onclick="closeMenu()">Catálogo</a></li>
-                <li><a href="#sobre" onclick="closeMenu()">Sobre Nós</a></li>
-                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
-            </ul>
-
-            <div class="menu-categorias">
-                <h3>Categorias</h3>
-                <a href="#" class="categoria-link" data-filtro="aneis" onclick="closeMenu()">Anéis</a>
-                <a href="#" class="categoria-link" data-filtro="colares" onclick="closeMenu()">Colares</a>
-                </div>
+        <div class="container-header">
             
-        </nav>
+            <div class="logo">
+                <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
+            </div>
+            
+           <nav class="menu-navegacao">
+    <button class="menu-hamburguer" onclick="toggleMenu()">
+        &#9776; </button>
+    
+    <div class="menu-links" id="menu-links">
+    <div class="container-header">
 
-        <div class="icones-topo">
-            <button class="botao-carrinho" id="abrir-carrinho" aria-label="Abrir Carrinho">
-                🛒
-                <span id="contador-carrinho">0</span>
-            </button>
+       
+        <div class="menu-categorias">
+            <h3>Categorias</h3>
+         
+        <div class="logo">
+            <img src="Fotos/Logo.jpg" alt="KC PRATAS" style="height: 120px;"> 
         </div>
 
     </div>
-</header>
+</nav>
+        <nav class="menu-navegacao">
+            <div class="menu-links" id="menu-links">
+                
+              
+                
+                <div class="menu-categorias">
+                    <h3>Categorias</h3>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('anel'); closeMenu();">Anéis</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('brinco'); closeMenu();">Brinco</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('colar'); closeMenu();">Colar</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('corrente'); closeMenu();">Correntes</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('pingente'); closeMenu();">Pingentes</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('pulseira'); closeMenu();">Pulseiras</a>
+                    <a href="#" class="categoria-link" onclick="filtrarProdutos('todos'); closeMenu();">Ver Todos</a>
+                </div>
+                
+            </div>
+        </nav>
+        
+        <div class="icones-topo">
+            
+            <button class="menu-hamburguer" onclick="toggleMenu()">
+                &#9776; 
+            </button>
+
+            <button id="abrir-carrinho" class="botao-carrinho"> 
+                🛒 <span id="contador-carrinho">0</span>
+            </button>
+
+        </div>
+    </header>
+    
+        
+    </div> </header> ```
 
     <section class="banner-destaque" id="inicio"> 
-        
+
         <div class="banner-slide fade">
             <img src="Fotos/Foto 14.png" alt="Destaque de coleção de pratas">
             <div class="frase-confianca">
@@ -57,20 +81,20 @@
                 <h2>NOVIDADE: Conheça nossa nova coleção de Prata legítima.</h2>
             </div>
         </div>
-        
+
         <div class="banner-slide fade">
             <img src="Fotos/Foto autismo.jpg" alt="Coleção Pura">
             <div class="frase-confianca">
                 <h2>Brilhe todos os dias com joias que refletem sua essência e elegância.</h2>
             </div>
         </div>
-        
-       
-        
+
+
+
     </section>
 
     <section class="filtros-categoria">
-        
+
         <div class="botoes-filtros">
             <button class="filtro-btn ativo" data-filtro="todos">Todos os Produtos</button>
 
@@ -80,34 +104,34 @@
             <button class="filtro-btn" data-filtro="corrente">Correntes</button>
             <button class="filtro-btn" data-filtro="pingente">Pingentes</button>
             <button class="filtro-btn" data-filtro="pulseira">Pulseiras</button>
-            
+
         </div>
     </section>
 
     <section class="catalogo" id="produtos">
         <h2>Catálogo de Produtos</h2>
-        
+
         <div class="lista-produtos"> 
-            
+
             <div class="produto" 
                 data-categoria="anel" onclick="openProductModal('Colar-Ponto-de-Luz-Zircônia-1')"
                  data-nome="Anel coração vazado com bolinhas" 
                  data-preco="27.90" 
                  data-id="Colar-Ponto-de-Luz-Zircônia-1"
                  data-descricao="Anel delicado com coração vazado e detalhes em bolinhas ao redor. Feminino, moderno e regulável."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Anel 1.jpg" alt="Colar-Ponto-de-Luz-Zircônia-1" class="img-principal">
                     <img src="Fotos/Anel 2.jpg" alt="Colar-Ponto-de-Luz-Zircônia-1" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Anel coração vazado com bolinhas</h3>
                     <p>R$ 27,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="Colar Ponto de Luz Zircônia" data-preco="27.90" data-id="Colar-Ponto-de-Luz-Zircônia-1">Adicionar ao Carrinho</button>
             </div>
-            
+
 
             <div class="produto" 
                  data-categoria="anel" onclick="openProductModal('brinco-argola-torcida-2')"
@@ -115,12 +139,12 @@
                  data-preco="29.90" 
                  data-id="brinco-argola-torcida-2"
                  data-descricao="Anel regulável com coração vazado e detalhe de seta. Romântico e estiloso, ajusta perfeitamente ao dedo."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Anel 5.jpg" alt="Brincos Argola Torcida 54 Principal" class="img-principal">
                     <img src="Fotos/Anel 5 (2).jpg" alt="Brincos Argola Torcida 54 Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Anel coração vazado e seta regulável</h3>
                     <p>R$ 29,90</p>
@@ -135,12 +159,12 @@
                  data-preco="23.90" 
                  data-id="Brinco-3-zircônias-cristal-5"
                  data-descricao="Brinco delicado com 3 zircônias cristal de 3mm alinhadas, garantindo brilho e elegância. Ideal para uso diário ou composição com outros acessórios. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Brinco 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Brinco 2.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco 3 zircônias cristal</h3>
                     <p>R$ 23,90</p>
@@ -154,12 +178,12 @@
                  data-preco=" 13.90" 
                  data-id="Brinco-coração-cheio-4"
                  data-descricao="Brinco coração cheio 7mm com acabamento liso e delicado. Minimalista e perfeito para quem gosta de acessórios discretos."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Brinco 3.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Brinco 4.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco coração cheio</h3>
                     <p>R$ 13,90</p>
@@ -173,12 +197,12 @@
                  data-preco="11,00" 
                  data-id="Brinco-coração-vazado-5"
                  data-descricao="Brinco coração vazado de 6mm, leve e delicado. Combina com qualquer look e pode ser usado sozinho ou com outros brincos."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Brinco 5.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Brinco 5.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco coração vazado</h3>
                     <p>R$ 11,00</p>
@@ -194,31 +218,31 @@
                  data-preco="19.90" 
                  data-id="Brinco-de-Trevo-Vazado-2"
                  data-descricao="Trevo vazado em Prata de Lei (925). Design leve e moderno. Peça que simboliza sorte e adiciona charme sutil."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 3.png" alt="Brinco de Trevo Vazado Principal" class="img-principal">
                     <img src="Fotos/Foto 4.png" alt="Pulseira Pingente Medalhas Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco de Trevo Vazado</h3>
                     <p>R$ 19,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="Brinco de Trevo Vazado" data-preco="19.90" data-id="Brinco-de-Trevo-Vazado-6">Adicionar ao Carrinho</button>
             </div>
-            
+
             <div class="produto" 
                  data-categoria="brinco" onclick="openProductModal('brinco-argola-cravejada-5')"
                  data-nome="Brinco de Argola Cravejada" 
                  data-preco="39.90" 
                  data-id="brinco-argola-cravejada-5"
                  data-descricao="Argola clássica e sofisticada, cravejada com zircônias de alto brilho. Feita em Prata 925, é uma peça elegante e atemporal para qualquer ocasião."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 6.png" alt="Anel Solitário de Corações Principal" class="img-principal">
                     <img src="Fotos/Foto 7.png" alt="Anel Solitário de Corações Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco de Argola Cravejada</h3>
                     <p>R$ 39,90</p>
@@ -232,12 +256,12 @@
                  data-preco="27,90" 
                  data-id="brinco-argola-cravejada-4"
                  data-descricao="Brinco delicado com zircônia cristal, trazendo brilho e elegância na medida certa. Ideal para quem busca um acessório versátil, que combina com qualquer look, do casual ao sofisticado. Perfeito para uso diário ou para compor mix de brincos. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 8.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 9.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco Zircônia Cristal</h3>
                     <p>R$ 27,90</p>
@@ -251,12 +275,12 @@
                  data-preco="34,90" 
                  data-id="Brinco- Coração-Vazado-1"
                  data-descricao="Brinco em formato de coração vazado, leve e delicado. Modelo moderno, perfeito para quem ama acessórios românticos e discretos. Ideal para uso diário, combina com qualquer look e pode ser utilizado sozinho ou em composição com outros brincos. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 10.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 11.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Brinco Coração Vazado</h3>
                     <p>R$34,90</p>
@@ -270,12 +294,12 @@
                  data-preco="39,90" 
                  data-id="Argola-com-Pingente-de-Coração-1"
                  data-descricao="Argola delicada com pingente de coração, perfeita para quem ama acessórios românticos e modernos. Leve, confortável e com caimento elegante, pode ser usada no dia a dia ou para compor looks mais sofisticados. Ideal para quem gosta de peças que destacam o visual com delicadeza. Antialérgica."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 21.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 22.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Argola com Pingente de Coração</h3>
                     <p>R$ 39,90</p>
@@ -289,12 +313,12 @@
                  data-preco="49,90" 
                  data-id="Colar-com-Pingente-de-Coração-1"
                  data-descricao="Colar delicado com pingente de coração, perfeito para quem ama acessórios românticos e elegantes. A peça tem brilho na medida certa e combina com qualquer estilo, desde o casual até o sofisticado. Ideal para presentear ou usar no dia a dia. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 12.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 13.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Colar com Pingente de Coração</h3>
                     <p>R$ 49,90</p>
@@ -308,18 +332,18 @@
                  data-preco="41.90" 
                  data-id="Colar-com-Pingente-de-Cruz-1"
                  data-descricao="Colar com pingente de cruz, delicado e elegante. Possui corrente de 40cm, ideal para usar no dia a dia ou em composição com outras correntes. Um clássico que combina com qualquer estilo, trazendo modernidade e significado à peça. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Colar 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Colar 2.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Colar com Pingente de Cruz</h3>
                     <p>R$ 41,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="" data-preco="41,90" data-id="Colar-com-Pingente-de-Cruz-1">Adicionar ao Carrinho</button>
-                
+
             </div>
 
             <div class="produto" 
@@ -328,12 +352,12 @@
                  data-preco="47,90" 
                  data-id="Colar-Pingente-Zircônia-Coração-1"
                  data-descricao="Colar delicado com pingente de coração em zircônia, garantindo brilho intenso e acabamento elegante. Corrente de 40cm, ideal para uso diário ou para compor mix de colares. Romântico, moderno e perfeito para presentear. Antialérgico."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Colar 3.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Colar 4.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Colar Pingente Zircônia Coração</h3>
                     <p>R$ 47,90</p>
@@ -347,12 +371,12 @@
                  data-preco="44.90" 
                  data-id="Colar-de-Trevo-Vazado-50cm"
                  data-descricao="Feito em prata 925 legítima, perfeito para quem ama acessórios delicados e cheios de personalidade."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 23.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 23.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Colar de Trevo Vazado 50cm</h3>
                     <p>R$ 44,90</p>
@@ -366,12 +390,12 @@
                  data-preco="51.90" 
                  data-id="Corrente-grumet-com-bola-1"
                  data-descricao="Feito em prata 925 legítima, perfeito para quem ama acessórios delicados e cheios de personalidade."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Corrente 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Corrente 2.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Corrente grumet com bola</h3>
                     <p>R$ 51,90</p>
@@ -385,12 +409,12 @@
                  data-preco="34.90" 
                  data-id="Corrente-Veneziana-40"
                  data-descricao="Argola clássica com pingente de coração removível. Versátil e confortável em Prata 925."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Corrente 3.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos//Corrente 3.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Corrente Veneziana 40cm</h3>
                     <p>R$ 34,90</p>
@@ -404,12 +428,12 @@
                  data-preco="24.90" 
                  data-id="Corrente-Cadeado-50cm"
                  data-descricao="Argola clássica com pingente de coração removível. Versátil e confortável em Prata 925."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Corrente 4.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Corrente 4.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Corrente Cadeado 50cm</h3>
                     <p>R$ 24,90</p>
@@ -424,12 +448,12 @@
                  data-preco="37.90" 
                  data-id="Pulseira-corrente-coração-3.4-19"
                  data-descricao="Argola clássica com pingente de coração removível. Versátil e confortável em Prata 925."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pulseira 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Pulseira 2.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pulseira corrente coração</h3>
                     <p>R$ 37,90</p>
@@ -443,19 +467,19 @@
                  data-preco="27.90" 
                  data-id="Pulseira-corrente-grumet-com-bolas"
                  data-descricao="Pulseira com corrente grumet e pequenas bolas decorativas. Tamanho 18cm. Combina estilo moderno com delicadeza."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pulseira 4.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Pulseira 4 (2).jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pulseira corrente grumet com bolas</h3>
                     <p>R$ 27,90</p>
                 </div>
                 <button class="botao-adicionar-carrinho" data-nome="Pulseira corrente grumet com bolas" data-preco="27.90" data-id="Pulseira-corrente-grumet-com-bolas">Adicionar ao Carrinho</button>
             </div>
-            
+
 
              <div class="produto" 
                  data-categoria="pulseira" onclick="openProductModal('Pulseira-com-Medalhinhas-2')"
@@ -463,12 +487,12 @@
                  data-preco="54.90" 
                  data-id="Pulseira-com-Medalhinhas-2"
                  data-descricao="Feita em prata 925, com acabamento leve e elegante."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 15.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 14.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pulseira com Medalhinhas</h3>
                     <p>R$ 54,90</p>
@@ -483,12 +507,12 @@
                  data-preco="54.90" 
                  data-id="Pulseira-com-Pingente-de-Coração"
                  data-descricao="Pulseira de malha fina com pingente de coração. Possui extensor para ajuste. Peça elegante em Prata 925."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Foto 17.png" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Foto 18.png" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pulseira com Pingente de Coração</h3>
                     <p>R$ 54,90</p>
@@ -502,12 +526,12 @@
                  data-preco="14.90" 
                  data-id="Pingente-Trevo-Vazado"
                  data-descricao="Feito em prata 925 legítima, com design delicado que simboliza amor e elegância em cada detalhe."> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pingente 1.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Pimgente 2.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pingente Trevo Vazado</h3>
                     <p>R$ 14,90</p>
@@ -522,12 +546,12 @@
                  data-preco="13.90" 
                  data-id="Pingente-de-Coração-3"
                  data-descricao="Feito em prata 925 legítima, com acabamento delicado e brilho que realça sua beleza com um toque romântico"> 
-                
+
                 <div class="produto-imagens"> 
                     <img src="Fotos/Pingente 3.jpg" alt="Brinco de Argola Cravejada Principal" class="img-principal">
                     <img src="Fotos/Pingente 4.jpg" alt="Brinco de Argola Cravejada Hover" class="img-hover">
                 </div>
-                
+
                 <div class="produto-info">
                     <h3>Pingente de Coração</h3>
                     <p>R$ 13,90</p>
@@ -535,7 +559,7 @@
                 <button class="botao-adicionar-carrinho" data-nome="Brinco de Argola Cravejada" data-preco="13.90" data-id="Pingente-de-Coração-3">Adicionar ao Carrinho</button>
             </div>
 
-           
+
         </div>
     </section>
 
@@ -546,7 +570,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="carrinho-lateral" class="carrinho-lateral">
         <div class="carrinho-header">
             <h3>Seu Carrinho</h3>
@@ -566,7 +590,7 @@
 
     <footer class="footer" id="contato">
         <div class="footer-conteudo">
-            
+
             <div class="footer-links">
                 <h4>Navegue</h4>
                 <ul>
@@ -574,21 +598,21 @@
                     <li><a href="#produtos">Catálogo</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-contato">
                 <h4>Fale Conosco</h4>
-                
+
                 <a href="https://wa.me/5511977429648?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20KC%20Pratas." target="_blank" class="social-link">
                     Contato via WhatsApp
                 </a>
-                
+
                 <a href="https://www.instagram.com/kcpratas_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">
                     Siga no Instagram
                 </a>
                 <p class="email">Email: kcpratas@yahoo.com</p>
             </div>
         </div>
-        
+
         <div class="footer-copyright">
             <p>&copy; 2025 KC Pratas. Todos os direitos reservados.</p>
         </div>
@@ -596,4 +620,3 @@
 
     <script src="script.js"></script>
 </body>
-</html>
