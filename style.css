@@ -38,10 +38,10 @@ a:hover {
 .header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    position: sticky; /* Fixa o header no topo */
+    padding: -5px 20px;
+    position: flex; /* Fixa o header no topo */
     top: 0;
-    z-index: 300; /* Garante que fique acima do conteúdo */
+    z-index: 200; /* Garante que fique acima do conteúdo */
 }
 
 .container-header {
@@ -112,19 +112,6 @@ a:hover {
     display: flex; 
 }
 
-
-
-/* Botão Hambúrguer (Escondido por padrão no Desktop) */
-.menu-hamburguer {
-    display: none; 
-    background: none;
-    border: none;
-    font-size: 2em;
-    cursor: pointer;
-    color: #333;
-    padding: 10px;
-    z-index: 300; 
-}
 
 
 /* =================================== */
@@ -724,23 +711,6 @@ a:hover {
     transform: translateX(0);
     visibility: visible; /* Torna visível ao abrir */
 }
-/* Fim da correção do #menu-links */
-
-    .menu-hamburguer {
-        display: block; /* Mostra o Hambúrguer */
-        order: -1; /* Move para a esquerda do logo, se necessário */
-    }
-
-    /* Ajuste dos links internos do menu */
-    #menu-links ul {
-        flex-direction: column;
-        text-align: left;
-    }
-
-    #menu-links ul li a {
-        border-bottom: 1px solid #eee;
-        padding: 15px 20px;
-    }
 
     /* ======================================================= */
 /* ESTILIZAÇÃO DAS NOVAS CATEGORIAS DENTRO DO HAMBÚRGUER */
@@ -833,3 +803,4 @@ a:hover {
     .lista-produtos {
         grid-template-columns: 1fr; /* 1 produto por linha */
     }
+}
